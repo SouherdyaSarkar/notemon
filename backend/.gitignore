@@ -1,0 +1,57 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+
+# Byte-compiled / optimized / DLL files
+*.dll
+*.exe
+*.log
+
+# --- Virtual environment ---
+venv/
+notemonvenv/
+.env/
+.venv/
+env/
+ENV/
+*.env
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS-specific files ---
+.DS_Store
+Thumbs.db
+
+# --- Cache & test ---
+.mypy_cache/
+.pytest_cache/
+.cache/
+coverage/
+htmlcov/
+*.cover
+*.pyc
+
+# --- FastAPI / Uvicorn / Build ---
+*.db
+*.sqlite3
+*.pid
+*.log
+dist/
+build/
+
+# --- Docker ---
+*.pid
+*.tar
+*.log
+docker-compose.override.yml
