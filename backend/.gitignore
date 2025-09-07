@@ -55,3 +55,6 @@ build/
 *.tar
 *.log
 docker-compose.override.yml
+
+
+service_account_firebase

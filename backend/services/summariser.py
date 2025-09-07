@@ -24,10 +24,11 @@ llm = ChatGoogleGenerativeAI(
     google_api_key=os.getenv("GOOGLE_API_KEY")
 )
 
-router.post("/report/summarize",response_model=response)
+router.post("/summarize",response_model=response)
 def generate_summary(request: QueryModel):
     messages = [
-        ("system", "You are a helpful assistant."),
+        ("system", """You are a helpful assistant. Summarise the given text body keeping all the points and context 
+         intact and make it properly comprehensive"""),
         ("human", request.query),
     ]
     result = llm.invoke(messages)

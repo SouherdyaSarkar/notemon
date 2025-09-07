@@ -30,8 +30,15 @@ llm = ChatGoogleGenerativeAI(
 router.post("/faq",response_model=faqResponse)
 def generate_summary(request: requestBody):
     messages = [
-        ("system", "You are a helpful assistant."),
-        ("human", request.query),
+
+        ("system","""You are a helpful assistant. Generate a set of FAQs according to the given text. 
+         return in array format, same as 
+         [
+         {question : <question>, hint : <hint>},
+         {question : <question>, hint : <hint>}
+         ]"""),
+
+        ("human", request.context),
     ]
     result = llm.invoke(messages)
     return faqResponse(faqSet=result)
